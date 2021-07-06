@@ -1,0 +1,68 @@
+<div class="row">
+  <div
+    *ngIf="alert"
+    class="alert alert-success alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>Success!</strong> Your data has been succesed....
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="col-4">
+    <form (ngSubmit)="onSubmitPostForm()">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Ttile</label>
+        <input
+          [(ngModel)]="title"
+          required
+          #name="ngModel"
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput"
+          placeholder="Example input"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Description</label>
+        <textarea
+          [(ngModel)]="description"
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Another input"
+          name="description"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput3">Category</label>
+        <select
+          [(ngModel)]="category"
+          class="form-control"
+          id="formGroupExampleInput3"
+          name="category"
+        >
+          <option value="">Select A Value</option>
+          <option value="1">Apple</option>
+          <option value="2">Coconut</option>
+          <option value="3">Mango</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput5">File</label>
+        <input
+          type="file"
+          class="form-control"
+          id="formGroupExampleInput5"
+          placeholder="Another input"
+          (change)="fileChange($event)"
+        />
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </div>
+</div>

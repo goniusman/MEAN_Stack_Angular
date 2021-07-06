@@ -1,0 +1,32 @@
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Category</th>
+      <th scope="col">Image</th>
+      <th scope="col">Author</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <th scope="row">1</th>
+      <td>{{ post.title }}</td>
+      <td>{{ post.description }}</td>
+      <td>{{ post.category }}</td>
+      <td>image</td>
+      <td>{{ post.author }}</td>
+      <td>
+        <button (click)="deletePost(post)">delete</button>
+        <a
+          class="btn btn-default"
+          style="color: white"
+          routerLink="post/update/{{ post._id }}"
+          >Update</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
