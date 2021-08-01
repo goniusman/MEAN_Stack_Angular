@@ -22,14 +22,14 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    // const user = {
-    //   email: this.email,
-    //   password: this.password,
-    // };
     const user = {
-      UserName: this.email,
-      Password: this.password,
+      email: this.email,
+      password: this.password,
     };
+    // const user = {
+    //   UserName: this.email,
+    //   Password: this.password,
+    // };
     this.userService.login(user).subscribe(
       (res: any) => {
         console.log(res);
@@ -80,4 +80,6 @@ export class LoginComponent implements OnInit {
   //     return null;
   //   }
   // }
+
+  
 }

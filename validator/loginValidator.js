@@ -5,7 +5,9 @@ const validate = user => {
 
     if (!user.email) {
         error.email = 'Please Provide Your Email'
-    } else if (!validator.isEmail(user.email)) {
+    } 
+    
+    else if (!validator.isEmail(user.email)) {
         error.email = 'Please Provide a Valid Email'
     }
 

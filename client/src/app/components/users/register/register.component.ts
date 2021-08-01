@@ -19,6 +19,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
+
+    // debugger;
     if (!this.name) {
       alert('please provide name');
       return;
@@ -36,21 +38,21 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+    const user = {
+      name: this.name,
+      email: this.email,
+      role: this.role,
+      password: this.password,
+      confirmPassword: this.confirmPassword,
+    };
+
     // const user = {
-    //   name: this.name,
-    //   email: this.email,
-    //   role: this.role,
-    //   password: this.password,
+    //   UserName: this.name,
+    //   Email: this.email,
+    //   Password: this.password,
+    //   FullName: 'Osman Goni',
     //   confirmPassword: this.confirmPassword,
     // };
-
-    const user = {
-      UserName: this.name,
-      Email: this.email,
-      Password: this.password,
-      FullName: 'Osman Goni',
-      // confirmPassword: this.confirmPassword,
-    };
 
     this.userService.addUser(user).subscribe((user) => this.users.push(user));
 

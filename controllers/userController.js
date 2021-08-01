@@ -11,7 +11,7 @@ const { serverError, resourceError } = require("../utils/error");
 module.exports = {
   register(req, res) {
     let { name, email, role, password, confirmPassword } = req.body;
-
+console.log(req.body);
     let validate = registerValidator({
       name,
       email,

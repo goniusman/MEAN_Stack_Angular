@@ -29,7 +29,7 @@ const commentRouter = require("./routers/commentRouter");
 const userRouter = require("./routers/userRouter");
 const categoryRouter = require("./routers/categoryRouter");
 
-app.use("/api/users/", userRouter);
+app.use("/api/users/", userRouter); 
 app.use("/api/post/", postRouter);
 app.use("/api/post/single-post/", commentRouter);
 app.use("/api/category/", categoryRouter);

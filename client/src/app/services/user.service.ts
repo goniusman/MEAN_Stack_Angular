@@ -15,13 +15,17 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class UserService {
-  // apiUrl = 'http://localhost::5000/api/users/';
-  apiUrl = 'http://localhost:60330/api/ApplicationUser/';
+  apiUrl = 'http://localhost:5000/api/users/';
+  // apiUrl = 'http://localhost:60330/api/ApplicationUser/';
 
   constructor(private http: HttpClient, private fb: FormBuilder) {}
 
   addUser(post): Observable<any> {
-    return this.http.post(this.apiUrl + 'Register', post, httpOptions);
+    
+    console.log(this.apiUrl + 'register');
+    // debugger;
+
+    return this.http.post(this.apiUrl + 'register', post, httpOptions);
   }
 
   login(post: any): Observable<any> {
